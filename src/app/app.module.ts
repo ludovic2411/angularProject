@@ -9,6 +9,10 @@ import { PersonnesComponent } from './personnes/personnes.component';
 import { MonProfileComponent } from './mon-profile/mon-profile.component';
 import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
 import { FooterComponent } from './footer/footer.component';
+import {HttpClientModule} from "@angular/common/http";
+import {DataService} from "../Services/data.service";
+import { SignInComponent } from './sign-in/sign-in.component';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 
 @NgModule({
@@ -18,14 +22,18 @@ import { FooterComponent } from './footer/footer.component';
     EntreprisesComponent,
     PersonnesComponent,
     MonProfileComponent,
-    FooterComponent
+    FooterComponent,
+    SignInComponent
   ],
+  providers: [DataService],
+  bootstrap: [AppComponent],
   imports: [
+    HttpClientModule,
     BrowserModule,
     AppRoutingModule,
-    FontAwesomeModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    FontAwesomeModule,
+    FormsModule,
+    ReactiveFormsModule
+  ]
 })
 export class AppModule { }

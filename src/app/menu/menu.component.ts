@@ -3,6 +3,7 @@ import {MenuItem} from "../../models/MenuItem";
 import {faUser} from "@fortawesome/free-solid-svg-icons";
 import {faUsers} from "@fortawesome/free-solid-svg-icons";
 import {faBusinessTime} from "@fortawesome/free-solid-svg-icons";
+import {faSign} from "@fortawesome/free-solid-svg-icons/faSign";
 
 @Component({
   selector: 'app-menu',
@@ -16,11 +17,13 @@ export class MenuComponent implements OnInit {
   faUser=faUser;
   faUsers=faUsers;
   faBusinessTime=faBusinessTime;
+  faSign=faSign;
 
   constructor() { }
 
   ngOnInit() {
     this.items=[
+      new MenuItem("signup","/signup",faSign),
       new MenuItem("entreprises","/entreprises",faBusinessTime),
     new MenuItem("personnes","/personnes",faUsers),
       new MenuItem("mon profil","/profile",faUser)
