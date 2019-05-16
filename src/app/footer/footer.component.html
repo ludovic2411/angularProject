@@ -1,0 +1,10 @@
+<footer class="page-footer cyan lighten-1">
+  <div class="footer-copyright cyan lighten-1">
+
+      <p class="left">@2019 Ludovic Ceccotti</p>
+      <div class="right">
+      <a  *ngFor="let item of items" href={{item.link}}>{{item.label}} <fa-icon [icon]="item.icon"></fa-icon></a>
+      </div>
+    </div>
+
+</footer>

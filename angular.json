@@ -28,7 +28,8 @@
             ],
             "styles": [
               "src/styles.sass",
-              "node_modules/materialize-css/dist/css/materialize.css"
+              "node_modules/materialize-css/dist/css/materialize.css",
+
             ],
             "scripts": [],
             "es5BrowserSupport": true
