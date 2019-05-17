@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {DataService} from "../../Services/data.service";
 import {Entreprise} from "../../models/Entreprise";
+import {HttpClient} from "@angular/common/http";
+import {Observable} from "rxjs";
+
 
 @Component({
   selector: 'app-entreprises',
@@ -8,15 +11,16 @@ import {Entreprise} from "../../models/Entreprise";
   styleUrls: ['./entreprises.component.sass']
 })
 export class EntreprisesComponent implements OnInit {
-  entreprises:Entreprise[]=[];
+  entreprises: Entreprise []=[];
+  entreprise:Entreprise;
   constructor(private dataService:DataService) { }
 
   ngOnInit() {
     this.getAll();
   }
-  getAll():any{
-    this.dataService.getEntreprises().subscribe((data:any)=>{
-      console.log(data);
+  getAll(){
+    this.dataService.Entreprises.subscribe((data:Entreprise)=>{
+       this.entreprises = data;
     });
   }
 }
