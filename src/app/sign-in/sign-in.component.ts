@@ -30,6 +30,7 @@ export class SignInComponent implements OnInit {
         console.log(data);
         if(data!=null){
           this.login.storeSession(this.user);
+          this.login.redirectProfile();
         }else{
           this.invalidLogin=true;
         }

@@ -7,7 +7,6 @@ import {Login} from "../models/Login";
 export class AuthService {
 
   constructor() {
-    console.log("auth service injected")
   }
 
   //check si il y a un user authentifié
