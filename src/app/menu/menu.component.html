@@ -2,7 +2,7 @@
   <div class="nav-wrapper cyan lighten-1">
     <a href="#" class="brand-logo">StackApply</a>
     <ul class="right">
-      <li *ngFor="let item of items"><a routerLink={{item.link}}>{{item.label}} <fa-icon [icon]="item.icon"></fa-icon></a>
+      <li *ngFor="let item of items"><a routerLink={{item.link}} routerLinkActive="active">{{item.label}}  <fa-icon [icon]="item.icon"></fa-icon></a>
       </li>
     </ul>
   </div>

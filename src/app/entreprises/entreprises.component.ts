@@ -18,6 +18,7 @@ export class EntreprisesComponent implements OnInit {
 
   ngOnInit() {
     this.entreprises=this.getAll();
+    console.log(this.entreprises)
   }
   getAll():Entreprise[]{
     let resultSet:Entreprise []=[];
