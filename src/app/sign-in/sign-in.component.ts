@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {applyRedirects} from "@angular/router/src/apply_redirects";
+import {LoginService} from "../../Services/login.service";
+import {Login} from "../../models/Login";
 
 @Component({
   selector: 'app-sign-in',
@@ -11,9 +13,10 @@ export class SignInComponent implements OnInit {
 
   email=new FormControl("",[Validators.required,Validators.email]);
   pwd=new FormControl("",[Validators.required]);
+  user:Login;
   invalid:boolean=false;
   invalidLogin:boolean=false;
-  constructor() { }
+  constructor(private login:LoginService) { }
 
   ngOnInit() {
   }
@@ -21,15 +24,17 @@ export class SignInComponent implements OnInit {
   logIn() {
     if (!this.email.valid || !this.pwd.valid){
       this.invalid=true;
-      console.log("1")
+    }else{
+      this.user=new Login(this.email.value,this.pwd.value);
+      this.login.logIn(this.user).subscribe((data)=>{
+        console.log(data);
+        if(data!=null){
+          this.login.storeSession(this.user);
+        }else{
+          this.invalidLogin=true;
+        }
+      })
     }
-    else if(this.email.value =="foo@foobar.com" && this.pwd.value == "foo"){
-      console.log(this.email.value);
-      console.log(this.pwd.value);
 
-    }
-    else{
-      this.invalidLogin=true;
-    }
   }
 }
