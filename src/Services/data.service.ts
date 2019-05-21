@@ -12,9 +12,7 @@ export class DataService {
 
   baseUrl:string="http://10.19.66.5:3000/";
 
-  constructor(private http:HttpClient) {
-    console.log("service injected");
-  }
+  constructor(private http:HttpClient) {}
 
   get Entreprises(): Observable<Entreprise>{
    return this.http.get<Entreprise>(`${URL}`);

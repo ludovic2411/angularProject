@@ -3,6 +3,7 @@ import {DataService} from "../../Services/data.service";
 import {Personnes} from "../../models/Personnes";
 import {LoginService} from "../../Services/login.service";
 import {Login} from "../../models/Login";
+import {faUser,faMailBulk,faPhone} from "@fortawesome/free-solid-svg-icons";
 
 @Component({
   selector: 'app-mon-profile',
@@ -11,21 +12,26 @@ import {Login} from "../../models/Login";
 })
 export class MonProfileComponent implements OnInit {
 
-  user:Personnes;
+  user:Personnes []=null;
   currentLogin:Login;
+  faUser=faUser;
+  faMailBulk=faMailBulk
+  faPhone=faPhone;
 
   constructor(private service:DataService,private login:LoginService) { }
 
   ngOnInit() {
-    this.loadPersonnalDatas();
-    console.log(this.user)
+    this.user=this.loadPersonnalDatas();
+   console.log(this.user)
   }
 
-  loadPersonnalDatas() {
-
+  loadPersonnalDatas():Personnes [] {
+    let currentUser:Personnes=null;
+    let userList:Personnes[]=[];
     this.currentLogin=this.login.getSession();
     this.service.getProfile(this.currentLogin.email).subscribe((data: Personnes) => {
-    this.user=new Personnes(data.email,data.nom,data.prenom,data.telephone,data.pwd,data.isRecruteur);
+    userList.push(new Personnes(data.email,data.nom,data.prenom,data.telephone,data.pwd,data.isRecruteur));
     });
+    return userList;
   }
 }

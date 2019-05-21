@@ -1,3 +1,13 @@
 <div>
-  <h2 class="center">Bienvenue</h2>
+  <h2 class="center grey-text text-darken-1">Bienvenue</h2>
+  <div *ngFor="let u of user" class="" >
+    <ul class=" grey-text text-darken-1 center">
+      <li class=""><fa-icon [icon]="faUser"></fa-icon>  Nom: {{u.nom}}</li>
+      <li class=""><fa-icon [icon]="faUser"></fa-icon> Prénom: {{u.prenom}}</li>
+      <li class=""><fa-icon [icon]="faMailBulk"></fa-icon> E-mail: {{u.email}}</li>
+      <li class=""> <fa-icon [icon]="faPhone"></fa-icon> Téléphone: {{u.telephone}}</li>
+      <li class="" *ngIf="!u.isRecruteur">Vous êtes inscrit en tant qu'utilisateur normal</li>
+      <li class="" *ngIf="u.isRecruteur">Vous êtes inscrit en tant que recruteur</li>
+    </ul>
+  </div>
 </div>

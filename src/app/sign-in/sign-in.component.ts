@@ -27,7 +27,6 @@ export class SignInComponent implements OnInit {
     }else{
       this.user=new Login(this.email.value,this.pwd.value);
       this.login.logIn(this.user).subscribe((data)=>{
-        console.log(data);
         if(data!=null){
           this.login.storeSession(this.user);
           this.login.redirectProfile();
