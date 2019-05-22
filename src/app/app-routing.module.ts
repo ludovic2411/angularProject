@@ -7,11 +7,14 @@ import {SignInComponent} from "./sign-in/sign-in.component";
 import {AuthGuard} from "./auth/auth.guard";
 import {RegisterComponent} from "./register/register.component";
 import {FavoritesComponent} from "./favorites/favorites.component";
+import {AddEntrepriseComponent} from "./add-entreprise/add-entreprise.component";
 
 const routes: Routes = [
   {path:"entreprises",component:EntreprisesComponent,canActivate:[AuthGuard]},
   {path:"personnes",component:PersonnesComponent,canActivate:[AuthGuard]},
   {path:"profile",component:MonProfileComponent,canActivate:[AuthGuard]},
+  {path:"favorites",component:FavoritesComponent,canActivate:[AuthGuard]},
+  {path:"add",component:AddEntrepriseComponent,canActivate:[AuthGuard]},
   {path:"signup",component:RegisterComponent},
   {path:"",component:SignInComponent}
 ];

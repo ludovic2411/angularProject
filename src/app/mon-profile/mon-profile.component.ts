@@ -5,6 +5,7 @@ import {LoginService} from "../../Services/login.service";
 import {Login} from "../../models/Login";
 import {faUser,faMailBulk,faPhone} from "@fortawesome/free-solid-svg-icons";
 import * as M from "materialize-css/dist/js/materialize";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-mon-profile',
@@ -19,11 +20,10 @@ export class MonProfileComponent implements OnInit {
   faMailBulk=faMailBulk
   faPhone=faPhone;
 
-  constructor(private service:DataService,private login:LoginService) { }
+  constructor(private service:DataService,private login:LoginService,private router:Router){ }
 
   ngOnInit() {
     this.user=this.loadPersonnalDatas();
-    console.log(this.user)
   }
 
   loadPersonnalDatas():Personnes [] {
@@ -36,9 +36,4 @@ export class MonProfileComponent implements OnInit {
     return userList;
   }
 
-  showfavorites() {
-    let elems = document.querySelectorAll('.modal');
-    let instances = M.modal.init(elems);
-    instances.open();
-  }
 }

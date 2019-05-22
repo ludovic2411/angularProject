@@ -11,10 +11,10 @@ const URL = 'http://10.19.66.5:3000/entreprises';
 })
 export class DataService {
 
-  baseUrl:string="http://10.19.66.5:3000/";
+  baseUrl:string="http://10.19.66.5:3000";
 
   constructor(private http:HttpClient) {}
-
+  //obtient toutes les entreprises
   get Entreprises(): Observable<Entreprise>{
    return this.http.get<Entreprise>(`${URL}`);
   }
@@ -23,8 +23,14 @@ export class DataService {
     return this.http.post<Object>(this.baseUrl+"/personnes/favorites?email="+email,input).pipe(catchError(this.handleError));
   }
 
+  //obtient les infos d'une personne
   getProfile(user:string){
-    return this.http.get<Personnes>(this.baseUrl+"personnes/find?email="+user).pipe(catchError(this.handleError));
+    return this.http.get<Personnes>(this.baseUrl+"/personnes/find?email="+user).pipe(catchError(this.handleError));
+  }
+
+  //obtient les favoris d'une personne
+  getFavorites(email:string){
+    return this.http.get<Object>(this.baseUrl+"/personnes/favorites?email="+email);
   }
 
   private handleError(error: HttpErrorResponse) {

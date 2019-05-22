@@ -8,16 +8,9 @@
       <li class=""> <fa-icon [icon]="faPhone"></fa-icon> Téléphone: {{u.telephone}}</li>
       <li class="" *ngIf="!u.getRecruteur()">Vous êtes inscrit en tant qu'utilisateur normal</li>
       <li class="" *ngIf="u.getRecruteur()">Vous êtes inscrit en tant que recruteur</li>
-      <li><button (click)="showfavorites()" class="cyan lighten-1 btn modal-trigger" >Mes entreprises</button></li>
     </ul>
-    <div id="modal1" class="modal">
-      <div class="modal-content">
-        <h4>Modal Header</h4>
-        <p>A bunch of text</p>
-      </div>
-      <div class="modal-footer">
-        <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
-      </div>
+    <div>
+      <router-outlet></router-outlet>
     </div>
   </div>
 </div>
