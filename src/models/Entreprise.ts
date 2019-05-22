@@ -6,9 +6,9 @@ export class Entreprise {
   private rue:string;
   private numero:string;
   private ville:string;
+  private entrepriseId?:number;
 
-
-  constructor(nom: string, siteWeb: string, email: string, cp: string, rue: string, numero: string, ville: string) {
+  constructor(nom: string, siteWeb: string, email: string, cp: string, rue: string, numero: string, ville: string,eId:number) {
     this.nom = nom;
     this.siteWeb = siteWeb;
     this.email = email;
@@ -16,6 +16,7 @@ export class Entreprise {
     this.rue = rue;
     this.numero = numero;
     this.ville = ville;
+    this.entrepriseId=eId;
   }
 
   getNom(): string {
@@ -72,5 +73,14 @@ export class Entreprise {
 
   setVille(value: string) {
     this.ville = value;
+  }
+
+
+  getEntrepriseId(): number {
+    return this.entrepriseId;
+  }
+
+  setEntrepriseId(value: number) {
+    this.entrepriseId = value;
   }
 }

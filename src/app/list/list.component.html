@@ -1,7 +1,7 @@
 <li class="collection-item grey-text text-darken-1">
-  {{entreprise.getNom()}}: Adresse: {{entreprise.getRue()}} - {{entreprise.getNumero()}} - {{entreprise.getCp()}} - {{entreprise.getVille()}} -
+  {{entreprise.getNom()}}: Adresse: {{entreprise.getRue()}} - {{entreprise.getNumero()}} - {{entreprise.getCp()}} - {{entreprise.getVille()}}
   <div class="right">
-    <button class=" round btn-small"><fa-icon [icon]="faPlus"></fa-icon></button>
+    <button class=" btn-floating btn-small"><fa-icon [icon]="faPlus" (click)="addList(entreprise.getEntrepriseId())"></fa-icon></button>
     <a href="{{entreprise.getSiteWeb()}}">Visiter le site</a>
     <a href="{{entreprise.getEmail()}}">Contacter</a>
   </div>
