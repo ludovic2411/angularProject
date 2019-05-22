@@ -24,7 +24,7 @@ export class EntreprisesComponent implements OnInit {
     this.dataService.Entreprises.subscribe((data:any)=>{
       //this.entreprises=data
       for(let i:number=0;i<data.length;i++){
-        resultSet.push(new Entreprise(data[i].nom,data[i].siteWeb,data[i].email,data[i].rue,data[i].numero,data[i].cp,data[i].ville));
+        resultSet.push(new Entreprise(data[i].nom,data[i].siteWeb,data[i].email,data[i].rue,data[i].numero,data[i].cp,data[i].ville,data[i].entrepriseId));
       }
 
      // resultSet.push(new Entreprise(data.nom,data.siteWeb,data.email,data.rue,data.numero,data.cp,data.ville));
