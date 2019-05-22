@@ -16,6 +16,7 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { ListComponent } from './list/list.component';
 import { FavoritesComponent } from './favorites/favorites.component';
 import { RegisterComponent } from './register/register.component';
+import { AddEntrepriseComponent } from './add-entreprise/add-entreprise.component';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { RegisterComponent } from './register/register.component';
     SignInComponent,
     ListComponent,
     FavoritesComponent,
-    RegisterComponent
+    RegisterComponent,
+    AddEntrepriseComponent
   ],
   providers: [DataService],
   bootstrap: [AppComponent],

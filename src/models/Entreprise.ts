@@ -1,76 +1,76 @@
 export class Entreprise {
-  private _nom:string;
-  private _siteWeb:string;
-  private _email:string;
-  private _cp:string;
-  private _rue:string;
-  private _numero:string;
-  private _ville:string;
+  private nom:string;
+  private siteWeb:string;
+  private email:string;
+  private cp:string;
+  private rue:string;
+  private numero:string;
+  private ville:string;
 
 
   constructor(nom: string, siteWeb: string, email: string, cp: string, rue: string, numero: string, ville: string) {
-    this._nom = nom;
-    this._siteWeb = siteWeb;
-    this._email = email;
-    this._cp = cp;
-    this._rue = rue;
-    this._numero = numero;
-    this._ville = ville;
+    this.nom = nom;
+    this.siteWeb = siteWeb;
+    this.email = email;
+    this.cp = cp;
+    this.rue = rue;
+    this.numero = numero;
+    this.ville = ville;
   }
 
-  get nom(): string {
-    return this._nom;
+  getNom(): string {
+    return this.nom;
   }
 
-  set nom(value: string) {
-    this._nom = value;
+  setNom(value: string) {
+    this.nom = value;
   }
 
-  get siteWeb(): string {
-    return this._siteWeb;
+  getSiteWeb(): string {
+    return this.siteWeb;
   }
 
-  set siteWeb(value: string) {
-    this._siteWeb = value;
+  setSiteWeb(value: string) {
+    this.siteWeb = value;
   }
 
-  get email(): string {
-    return this._email;
+  getEmail(): string {
+    return this.email;
   }
 
-  set email(value: string) {
-    this._email = value;
+  set Email(value: string) {
+    this.email = value;
   }
 
-  get cp(): string {
-    return this._cp;
+  getCp(): string {
+    return this.cp;
   }
 
-  set cp(value: string) {
-    this._cp = value;
+  setCp(value: string) {
+    this.cp = value;
   }
 
-  get rue(): string {
-    return this._rue;
+  getRue(): string {
+    return this.rue;
   }
 
-  set rue(value: string) {
-    this._rue = value;
+  setRue(value: string) {
+    this.rue = value;
   }
 
-  get numero(): string {
-    return this._numero;
+  getNumero(): string {
+    return this.numero;
   }
 
-  set numero(value: string) {
-    this._numero = value;
+  setNumero(value: string) {
+    this.numero = value;
   }
 
-  get ville(): string {
-    return this._ville;
+  getVille(): string {
+    return this.ville;
   }
 
-  set ville(value: string) {
-    this._ville = value;
+  setVille(value: string) {
+    this.ville = value;
   }
 }

@@ -14,6 +14,8 @@ export class RegisterComponent implements OnInit {
   newUser:Personnes;
   //nouveau login
   newLogin:Login;
+  //erreur si l'user existe déjà
+  exist:boolean=false;
 
   registerForm=new FormGroup(
     {
@@ -38,7 +40,7 @@ export class RegisterComponent implements OnInit {
      this.login.register(this.newUser).subscribe((data:any)=>{
        this.login.storeSession(new Login(this.newUser.getEmail(),this.newUser.getPwd()));
           this.login.redirectProfile();
-      })
+      },error=>this.exist=true)
 
     }
   }

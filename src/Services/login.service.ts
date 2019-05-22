@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from "@angular/common/http";
-import {Observable} from "rxjs";
+import {HttpClient, HttpErrorResponse} from "@angular/common/http";
+import {Observable, throwError} from "rxjs";
 import {Login} from "../models/Login";
 import {Router} from "@angular/router";
 import {Personnes} from "../models/Personnes";
+import {catchError} from "rxjs/operators";
 
 @Injectable({
   providedIn: 'root'
@@ -15,11 +16,11 @@ export class LoginService {
   constructor(private http:HttpClient, private router:Router) { }
 
   logIn( input:Login):Observable<Login> {
-    return this.http.post<Login>(this.url+"/login",input);
+    return this.http.post<Login>(this.url+"/login",input).pipe(catchError(this.handleError));
   }
 
   register(newUser:Personnes):Observable<Personnes>{
-    return this.http.post<Personnes>(this.url+"/personnes",newUser);
+    return this.http.post<Personnes>(this.url+"/personnes",newUser).pipe(catchError(this.handleError));
   }
 
   storeSession(user:Login){
@@ -35,5 +36,25 @@ export class LoginService {
   redirectProfile(){
     this.router.navigate(['/profile']);
   }
+
+  private handleError(error: HttpErrorResponse) {
+    let message:string='Something bad happened; please try again later.';
+    if (error.error instanceof ErrorEvent) {
+      // A client-side or network error occurred. Handle it accordingly.
+      console.error('An error occurred:', error.error.message);
+    } else {
+      if (error.error.message=="org.hibernate.exception.ConstraintViolationException: could not execute statement"){
+        message="Vous avez peut-être déjà un compte"
+      }
+      // The backend returned an unsuccessful response code.
+      // The response body may contain clues as to what went wrong,
+      console.error(
+        `Backend returned code ${error.status}, ` +
+        `body was: ${error.error.message}`);
+    }
+    // return an observable with a user-facing error message
+    return throwError(
+      message);
+  };
 
 }
