@@ -23,12 +23,21 @@ export class MenuComponent implements OnInit {
   constructor(private auth:AuthService) { }
 
   ngOnInit() {
-    this.items=[
-      new MenuItem("signup","/signup",faSign),
-      new MenuItem("entreprises","/entreprises",faBusinessTime),
-    new MenuItem("personnes","/personnes",faUsers),
-      new MenuItem("mon profil","/profile",faUser)
-    ];
+    if (!this.auth.isAuthenticated()){
+
+      this.items=[
+        new MenuItem("signup","/signup",faSign),
+        new MenuItem("entreprises","/entreprises",faBusinessTime),
+        new MenuItem("personnes","/personnes",faUsers),
+        new MenuItem("mon profil","/profile",faUser)
+      ];
+    } else {
+      this.items=[
+        new MenuItem("entreprises","/entreprises",faBusinessTime),
+        new MenuItem("personnes","/personnes",faUsers),
+        new MenuItem("mon profil","/profile",faUser)
+      ];
+    }
   }
 
 }
