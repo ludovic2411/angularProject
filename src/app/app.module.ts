@@ -14,6 +14,8 @@ import {DataService} from "../Services/data.service";
 import { SignInComponent } from './sign-in/sign-in.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { ListComponent } from './list/list.component';
+import { FavoritesComponent } from './favorites/favorites.component';
+import { RegisterComponent } from './register/register.component';
 
 
 @NgModule({
@@ -25,7 +27,9 @@ import { ListComponent } from './list/list.component';
     MonProfileComponent,
     FooterComponent,
     SignInComponent,
-    ListComponent
+    ListComponent,
+    FavoritesComponent,
+    RegisterComponent
   ],
   providers: [DataService],
   bootstrap: [AppComponent],

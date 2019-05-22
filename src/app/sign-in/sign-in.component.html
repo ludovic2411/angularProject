@@ -1,11 +1,13 @@
 <div>
   <form action="" (ngSubmit)="logIn()">
     <p><label for="email"> email</label></p>
-    <p><input [class.invalid]="invalid" type="text"  [formControl]="email" ></p>
+    <p><input [class.invalid]="invalid" type="text"  [formControl]="email" id="email" ></p>
     <span *ngIf="!email.valid" class="helper-text" data-error="wrong" >email doit être une adresse valide( doit comporter un "@")</span>
     <p><label for="pwd">mot de passe</label></p>
-    <p><input type="password" name="" id="" [formControl]="pwd"></p>
+    <p><input type="password" id="pwd" [formControl]="pwd"></p>
     <span *ngIf="invalidLogin" [class.invalid]="invalidLogin" class="helper-text" data-error="wrong" >Login ou mot de passe invalide</span>
-    <p><button class="btn cyan lighten-1" type="submit">Sign in</button></p>
+    <p><button class="btn cyan lighten-1" type="submit">Sign in</button>
+      <a class="text-lighten-1 cyan-text" routerLink="/signup">Pas encore inscrit?</a>
+      </p>
   </form>
 </div>

@@ -1,67 +1,66 @@
 export class Personnes {
-  private _email:string;
-  private _nom:string;
-  private _prenom:string;
-  private _telephone:number;
-  private _pwd:string;
-  private _isRecruteur:boolean;
+  private email:string;
+  private nom:string;
+  private prenom:string;
+  private telephone:number;
+  private pwd:string;
+  private recruteur:boolean;
 
 
-  constructor(email: string, nom: string, prenom: string, telephone: number, pwd: string, isRecruteur: boolean) {
-    this._email = email;
-    this._nom = nom;
-    this._prenom = prenom;
-    this._telephone = telephone;
-    this._pwd = pwd;
-    this._isRecruteur = isRecruteur;
+  constructor(email: string, nom: string, prenom: string, telephone: number, pwd: string, recruteur: boolean) {
+    this.email = email;
+    this.nom = nom;
+    this.prenom = prenom;
+    this.telephone = telephone;
+    this.pwd = pwd;
+    this.recruteur = recruteur;
   }
 
 
-  get email(): string {
-    return this._email;
+  getEmail(): string {
+    return this.email;
   }
 
-  set email(value: string) {
-    this._email = value;
+  setEmail(value: string) {
+    this.email = value;
   }
 
-  get nom(): string {
-    return this._nom;
+  getNom(): string {
+    return this.nom;
   }
 
-  set nom(value: string) {
-    this._nom = value;
+  setNom(value: string) {
+    this.nom = value;
   }
 
-  get prenom(): string {
-    return this._prenom;
+  getPrenom(): string {
+    return this.prenom;
   }
 
-  set prenom(value: string) {
-    this._prenom = value;
+  setPrenom(value: string) {
+    this.prenom = value;
   }
 
-  get telephone(): number {
-    return this._telephone;
+  getTelephone(): number {
+    return this.telephone;
   }
 
-  set telephone(value: number) {
-    this._telephone = value;
+  setTelephone(value: number) {
+    this.telephone = value;
   }
 
-  get pwd(): string {
-    return this._pwd;
+  getPwd(): string {
+    return this.pwd;
   }
 
-  set pwd(value: string) {
-    this._pwd = value;
+  setPwd(value: string) {
+    this.pwd = value;
   }
 
-  get isRecruteur(): boolean {
-    return this._isRecruteur;
+  getRecruteur():boolean{
+    return this.recruteur;
   }
-
-  set isRecruteur(value: boolean) {
-    this._isRecruteur = value;
+  setRecruteur(value: boolean) {
+    this.recruteur = value;
   }
 }
