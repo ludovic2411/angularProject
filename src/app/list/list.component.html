@@ -1,7 +1,8 @@
 <li class="collection-item grey-text text-darken-1">
-  {{entreprise.nom}}: Adresse: {{entreprise.rue}} - {{entreprise.numero}} - {{entreprise.cp}} - {{entreprise.ville}} -
+  {{entreprise.getNom()}}: Adresse: {{entreprise.getRue()}} - {{entreprise.getNumero()}} - {{entreprise.getCp()}} - {{entreprise.getVille()}} -
   <div class="right">
-    <a href="{{entreprise.siteWeb}}">Visiter le site</a>
-    <a href="{{entreprise.email}}">Contacter</a>
+    <button class=" round btn-small"><fa-icon [icon]="faPlus"></fa-icon></button>
+    <a href="{{entreprise.getSiteWeb()}}">Visiter le site</a>
+    <a href="{{entreprise.getEmail()}}">Contacter</a>
   </div>
 </li>

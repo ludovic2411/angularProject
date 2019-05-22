@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Entreprise} from "../../models/Entreprise";
+import {faPlus} from "@fortawesome/free-solid-svg-icons";
 
 @Component({
   selector: 'app-list',
@@ -9,6 +10,8 @@ import {Entreprise} from "../../models/Entreprise";
 export class ListComponent implements OnInit {
 
   @Input() entreprise:Entreprise;
+
+  faPlus=faPlus;
 
   constructor() { }
 
