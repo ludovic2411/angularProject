@@ -19,6 +19,7 @@ export class FavoritesComponent implements OnInit {
 
   ngOnInit() {
     this.favorites=this.getFavorites();
+    console.log(this.favorites)
   }
 
   getFavorites(){
@@ -30,6 +31,12 @@ export class FavoritesComponent implements OnInit {
       }
     });
     return favList;
+  }
+
+  deleteFavorite(id:number){
+    this.currentUser=this.login.getSession();
+    let favoriteToDelete:Object={recruteurEmail:this.currentUser.email,entrepriseId:id};
+    this.data.deleteFavorite(id).subscribe();
   }
 
 }

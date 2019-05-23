@@ -23,6 +23,11 @@ export class DataService {
     return this.http.post<Object>(this.baseUrl+"/personnes/favorites?email="+email,input).pipe(catchError(this.handleError));
   }
 
+  //Supprime un favori de la liste d'une personne
+  deleteFavorite(id:number):Observable<Object>{
+    return this.http.delete<Object>(this.baseUrl+"/personnes/favorites/"+id);
+  }
+
   //obtient les infos d'une personne
   getProfile(user:string){
     return this.http.get<Personnes>(this.baseUrl+"/personnes/find?email="+user).pipe(catchError(this.handleError));
