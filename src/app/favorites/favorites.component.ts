@@ -19,7 +19,6 @@ export class FavoritesComponent implements OnInit {
 
   ngOnInit() {
     this.favorites=this.getFavorites();
-    console.log(this.favorites)
   }
 
   getFavorites(){
@@ -37,6 +36,13 @@ export class FavoritesComponent implements OnInit {
     this.currentUser=this.login.getSession();
     let favoriteToDelete:Object={recruteurEmail:this.currentUser.email,entrepriseId:id};
     this.data.deleteFavorite(id).subscribe();
+    this.favorites.map((key)=>{
+      if(key.favoriteId==id){
+        let position:number=this.favorites.indexOf(key)
+        this.favorites.splice(position,1)
+      }
+    });
+
   }
 
 }
