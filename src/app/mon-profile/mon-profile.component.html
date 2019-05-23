@@ -8,9 +8,7 @@
       <li class=""> <fa-icon [icon]="faPhone"></fa-icon> Téléphone: {{u.telephone}}</li>
       <li class="" *ngIf="!u.getRecruteur()">Vous êtes inscrit en tant qu'utilisateur normal</li>
       <li class="" *ngIf="u.getRecruteur()">Vous êtes inscrit en tant que recruteur</li>
+      <a  routerLink="/favorites"><fa-icon [icon]="faGo"></fa-icon>Accéder à vos favoris</a>
     </ul>
-    <div>
-      <router-outlet></router-outlet>
-    </div>
   </div>
 </div>

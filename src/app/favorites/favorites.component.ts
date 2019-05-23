@@ -33,11 +33,9 @@ export class FavoritesComponent implements OnInit {
   }
 
   deleteFavorite(id:number){
-    this.currentUser=this.login.getSession();
-    let favoriteToDelete:Object={recruteurEmail:this.currentUser.email,entrepriseId:id};
     this.data.deleteFavorite(id).subscribe();
-    this.favorites.map((key)=>{
-      if(key.favoriteId==id){
+    this.favorites.map((key:Object)=>{
+      if(key['favoriteId']==id){
         let position:number=this.favorites.indexOf(key)
         this.favorites.splice(position,1)
       }

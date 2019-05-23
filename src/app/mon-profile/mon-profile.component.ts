@@ -3,8 +3,7 @@ import {DataService} from "../../Services/data.service";
 import {Personnes} from "../../models/Personnes";
 import {LoginService} from "../../Services/login.service";
 import {Login} from "../../models/Login";
-import {faUser,faMailBulk,faPhone} from "@fortawesome/free-solid-svg-icons";
-import * as M from "materialize-css/dist/js/materialize";
+import {faUser,faMailBulk,faPhone,faArrowAltCircleRight} from "@fortawesome/free-solid-svg-icons";
 import {Router} from "@angular/router";
 
 @Component({
@@ -19,6 +18,7 @@ export class MonProfileComponent implements OnInit {
   faUser=faUser;
   faMailBulk=faMailBulk
   faPhone=faPhone;
+  faGo=faArrowAltCircleRight;
 
   constructor(private service:DataService,private login:LoginService,private router:Router){ }
 
