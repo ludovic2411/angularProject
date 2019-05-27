@@ -56,11 +56,11 @@ export class AddEntrepriseComponent implements OnInit {
    ,a.ville,a.pays);
    }
    console.log(this.newEntreprise)
-   /*this.data.createEntreprise(this.newEntreprise).subscribe((data:EntrepriseToInsert)=>{
+   this.data.createEntreprise(this.newEntreprise).subscribe((data:EntrepriseToInsert)=>{
      if (data!=null){
        this.success=true;
      }
-   });*/
+   });
   }
 
   getZipCode():ZipCode[]{

@@ -44,6 +44,11 @@ export class DataService {
     return this.http.get<Object>(url);
   }
 
+  //Charge toute les personnes
+  getPersonnes(){
+    return this.http.get<Personnes[]>(this.baseUrl+"/personnes");
+  }
+
   //Créer une entreprise
   createEntreprise(input:EntrepriseToInsert):Observable<EntrepriseToInsert>{
     return this.http.post<EntrepriseToInsert>(this.baseUrl+"/entreprises",input);
