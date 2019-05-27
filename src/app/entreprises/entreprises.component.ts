@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {DataService} from "../../Services/data.service";
 import {Entreprise} from "../../models/Entreprise";
-import {faArrowAltCircleRight} from "@fortawesome/free-solid-svg-icons";
+import {faArrowAltCircleRight, faPlus} from "@fortawesome/free-solid-svg-icons";
 
 
 @Component({
@@ -13,6 +13,7 @@ export class EntreprisesComponent implements OnInit {
   entreprises: Entreprise []=[];
   entreprise:Entreprise;
   faGo:any=faArrowAltCircleRight;
+  faPlus=faPlus;
 
   constructor(private dataService:DataService) { }
 

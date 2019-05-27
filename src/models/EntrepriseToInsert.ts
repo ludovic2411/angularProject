@@ -1,50 +1,50 @@
 export class EntrepriseToInsert {
-  private nom:string;
-  private siteWeb:string;
-  private email:string;
+  private nomEntreprise:string;
+  private site:string;
+  private mail:string;
   private telephone:number;
   private cp:string;
   private rue:string;
   private numero:string;
-  private ville:string;
+  private nomVille:string;
   private pays:string;
 
 
   constructor(nom: string, siteWeb: string, email: string, telephone: number, cp: string, rue: string, numero: string, ville: string, pays: string) {
-    this.nom = nom;
-    this.siteWeb = siteWeb;
-    this.email = email;
+    this.nomEntreprise = nom;
+    this.site= siteWeb;
+    this.mail = email;
     this.telephone = telephone;
     this.cp = cp;
     this.rue = rue;
     this.numero = numero;
-    this.ville = ville;
+    this.nomVille = ville;
     this.pays = pays;
   }
 
 
-  getNom(): string {
-    return this.nom;
+  getNomEntreprise(): string {
+    return this.nomEntreprise;
   }
 
-  setNOm(value: string) {
-    this.nom = value;
+  setNOmEntreprise(value: string) {
+    this.nomEntreprise= value;
   }
 
   getSiteWeb(): string {
-    return this.siteWeb;
+    return this.site;
   }
 
   setSiteWeb(value: string) {
-    this.siteWeb = value;
+    this.site = value;
   }
 
-  getEmail(): string {
-    return this.email;
+  getMail(): string {
+    return this.mail;
   }
 
-  setEmail(value: string) {
-    this.email = value;
+  setMail(value: string) {
+    this.mail = value;
   }
 
   getTelephone(): number {
@@ -79,12 +79,12 @@ export class EntrepriseToInsert {
     this.numero = value;
   }
 
-  gettVille(): string {
-    return this.ville;
+  getNomtVille(): string {
+    return this.nomVille;
   }
 
-  setVille(value: string) {
-    this.ville = value;
+  setNomVille(value: string) {
+    this.nomVille = value;
   }
 
   getPays(): string {
