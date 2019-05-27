@@ -1,3 +1,38 @@
-<p>
-  add-entreprise works!
-</p>
+<div>
+  <h2 class="center grey-text text-darken-1">Ajouter une entreprise</h2>
+  <form [formGroup]="entrepriseForm" (ngSubmit)="onSubmit()">
+    <div class="details ">
+      <h3 class="center grey-text text-darken-1">Nom de l'entreprise et détails</h3>
+      <p><label for="nom">Nom: ** </label></p>
+      <p><input type="text" formControlName="nom" id="nom"></p>
+      <p><label for="siteWeb">Site web: **</label></p>
+      <p><input type="text"  id="siteWeb" formControlName="siteWeb"></p>
+      <p><label for="email">Email de l'entreprise: **</label></p>
+      <p><input type="text" id="email" formControlName="email"></p>
+      <p><label for="tel">Télephone:</label></p>
+      <p><input type="text" id="tel" formControlName="telephone"></p>
+      <p  class="red-text text-darken-4" *ngIf="!entrepriseForm.valid">Tous les champs marqués de ** doivent être remplis</p>
+      <p class="green-text" *ngIf="success"><fa-icon [icon]="faCheck"></fa-icon> Entreprise correctement ajoutée</p>
+    </div>
+    <div class="adresse " formGroupName="adresse">
+      <h3 class="text-darken-1 grey-text center">Adresse de l'entreprise</h3>
+      <p><label for="cp">Code postal: **</label></p>
+      <p *ngIf="entrepriseForm.value.adresse.pays!='BEL'"><input type="text" id="cp" formControlName="cp"></p>
+      <p *ngIf="entrepriseForm.value.adresse.pays=='BEL'">
+        <select  class="white-text cyan lighten-1 browser-default" formControlName="cp" id="">
+        <option *ngFor="let z of zipList" value="{{z.getZip()}}" (click)="updateVille(z.getCity())">{{z.getZip()}} - {{z.getCity()}}</option>
+      </select></p>
+      <p><label for="rue">Rue: **</label></p>
+      <p><input type="text" id="rue" formControlName="rue"></p>
+      <p><label for="numero">Numéro: **</label></p>
+      <p><input type="text" id="numero" formControlName="numero"></p>
+      <p><label for="ville">Ville: **</label></p>
+      <p><input type="text" id="ville" formControlName="ville"></p>
+      <p><label for="pays">Pays: **</label></p>
+      <p><select class="browser-default cyan lighten-1 white-text" formControlName="pays" id="pays">
+        <option  *ngFor="let p of paysList" value="{{p.getCode()}}">{{p.getNom()}}</option>
+      </select></p>
+      <p><button [disabled]="!entrepriseForm.valid" class="btn green" type="submit"><fa-icon [icon]="faSend"></fa-icon> Enregistrer</button></p>
+    </div>
+  </form>
+</div>

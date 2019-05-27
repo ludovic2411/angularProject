@@ -4,6 +4,7 @@ import {Entreprise} from "../models/Entreprise";
 import {Observable, throwError} from "rxjs";
 import {Personnes} from "../models/Personnes";
 import {catchError} from "rxjs/operators";
+import {EntrepriseToInsert} from "../models/EntrepriseToInsert";
 
 const URL = 'http://10.19.66.5:3000/entreprises';
 @Injectable({
@@ -36,6 +37,16 @@ export class DataService {
   //obtient les favoris d'une personne
   getFavorites(email:string){
     return this.http.get<Object>(this.baseUrl+"/personnes/favorites?email="+email);
+  }
+
+  //Charge des villes et des codes postaux pour la Belgique
+  getZipCode(url:string){
+    return this.http.get<Object>(url);
+  }
+
+  //Créer une entreprise
+  createEntreprise(input:EntrepriseToInsert):Observable<EntrepriseToInsert>{
+    return this.http.post<EntrepriseToInsert>(this.baseUrl+"/entreprises",input);
   }
 
   private handleError(error: HttpErrorResponse) {
