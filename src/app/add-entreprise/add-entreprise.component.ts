@@ -56,11 +56,11 @@ export class AddEntrepriseComponent implements OnInit {
    ,a.ville,a.pays);
    }
    console.log(this.newEntreprise)
-   this.data.createEntreprise(this.newEntreprise).subscribe((data:EntrepriseToInsert)=>{
+   /*this.data.createEntreprise(this.newEntreprise).subscribe((data:EntrepriseToInsert)=>{
      if (data!=null){
        this.success=true;
      }
-   });
+   });*/
   }
 
   getZipCode():ZipCode[]{
@@ -70,8 +70,16 @@ export class AddEntrepriseComponent implements OnInit {
         resultSet.push(new ZipCode(parseInt(data[i]["zip"]),data[i]["city"]));
       }
     });
-     console.log(resultSet)
     return resultSet;
   }
+
+  updateVille(ville:string){
+    this.entrepriseForm.patchValue({
+      adresse:{
+        ville:ville
+      }
+    });
+  }
+
 
 }

@@ -20,7 +20,7 @@
       <p *ngIf="entrepriseForm.value.adresse.pays!='BEL'"><input type="text" id="cp" formControlName="cp"></p>
       <p *ngIf="entrepriseForm.value.adresse.pays=='BEL'">
         <select  class="white-text cyan lighten-1 browser-default" formControlName="cp" id="">
-        <option *ngFor="let z of zipList" value="{{z.getZip()}}">{{z.getZip()}} - {{z.getCity()}}</option>
+        <option *ngFor="let z of zipList" value="{{z.getZip()}}" (click)="updateVille(z.getCity())">{{z.getZip()}} - {{z.getCity()}}</option>
       </select></p>
       <p><label for="rue">Rue: **</label></p>
       <p><input type="text" id="rue" formControlName="rue"></p>
