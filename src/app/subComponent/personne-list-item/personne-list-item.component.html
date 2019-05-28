@@ -1,4 +1,4 @@
-<li class="collection-item  grey-text"><fa-icon [icon]="faUser"></fa-icon> {{nom}} {{prenom}}  <span *ngIf="recruteur">recruteur</span> <span class="right cyan-text">{{email}} <fa-icon class="btn-floating btn-small cyan lighten-1 white-text" [icon]="faSend" (click)="send(email)"></fa-icon></span></li>
+<li class="collection-item  grey-text"><fa-icon [icon]="faUser"></fa-icon> {{nom}} {{prenom}}  <span *ngIf="recruteur">recruteur</span> <span class="right cyan-text">{{email}} <fa-icon class="btn-floating btn-small cyan lighten-1" [icon]="faSend" (click)="send(email)"></fa-icon></span></li>
 <div id="modal">
   <div id="modal-content">
     <app-contact-personne [destinataire]="email"></app-contact-personne>
