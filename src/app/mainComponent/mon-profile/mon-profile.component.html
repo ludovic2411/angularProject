@@ -1,0 +1,15 @@
+<div>
+  <h2 class="center grey-text darken-4">Bienvenue</h2>
+  <div *ngFor="let u of user" class="" >
+    <ul class=" grey-text darken-4 center">
+      <li class=""><fa-icon [icon]="faUser"></fa-icon>  Nom: {{u.nom}}</li>
+      <li class=""><fa-icon [icon]="faUser"></fa-icon> Prénom: {{u.prenom}}</li>
+      <li class=""><fa-icon [icon]="faMailBulk"></fa-icon> E-mail: {{u.email}}</li>
+      <li class=""> <fa-icon [icon]="faPhone"></fa-icon> Téléphone: {{u.telephone}}</li>
+      <li class="" *ngIf="!u.getRecruteur()">Vous êtes inscrit en tant qu'utilisateur normal</li>
+      <li class="" *ngIf="u.getRecruteur()">Vous êtes inscrit en tant que recruteur</li>
+      <a  routerLink="/favorites"><fa-icon [icon]="faGo"></fa-icon>Accéder à vos favoris</a>
+    </ul>
+  </div>
+</div>
+<app-footer></app-footer>
