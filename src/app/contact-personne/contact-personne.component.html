@@ -1,0 +1,12 @@
+<div>
+  <form  [formGroup]="contactForm" (ngSubmit)="sendEmail()">
+    <div class="left">
+      <p> <label for="to">Destinataire:</label></p>
+      <p><input type="text" formControlName="to" id="to"></p>
+      <p><label for="subject">Sujet:</label></p>
+      <p><input type="text" formControlName="subject" id="subject"></p>
+    </div>
+    <textarea class="right" formControlName="text" id="text" cols="60" rows="30"></textarea>
+    <button class="btn-floating btn-small green" [disabled]="!contactForm.valid"> <fa-icon [icon]="faSendmail"></fa-icon></button>
+  </form>
+</div>
