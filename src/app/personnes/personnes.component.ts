@@ -15,7 +15,6 @@ export class PersonnesComponent implements OnInit {
 
   ngOnInit() {
     this.personnesList=this.getPersonnes();
-    console.log(this.personnesList)
   }
 
   getPersonnes():Personnes[]{

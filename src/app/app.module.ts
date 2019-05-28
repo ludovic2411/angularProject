@@ -17,6 +17,8 @@ import { ListComponent } from './list/list.component';
 import { FavoritesComponent } from './favorites/favorites.component';
 import { RegisterComponent } from './register/register.component';
 import { AddEntrepriseComponent } from './add-entreprise/add-entreprise.component';
+import { PersonneListItemComponent } from './personne-list-item/personne-list-item.component';
+import { ContactPersonneComponent } from './contact-personne/contact-personne.component';
 
 
 @NgModule({
@@ -31,7 +33,9 @@ import { AddEntrepriseComponent } from './add-entreprise/add-entreprise.componen
     ListComponent,
     FavoritesComponent,
     RegisterComponent,
-    AddEntrepriseComponent
+    AddEntrepriseComponent,
+    PersonneListItemComponent,
+    ContactPersonneComponent
   ],
   providers: [DataService],
   bootstrap: [AppComponent],

@@ -1,3 +1,6 @@
-<p>
-  personnes works!
-</p>
+<div>
+  <h2 class="center grey-text darken-4">Les utilisateurs du site</h2>
+  <ul class="collection">
+    <app-personne-list-item *ngFor="let p of personnesList" [nom]="p.getNom()" [prenom]="p.getPrenom()" [email]="p.getEmail()" [recruteur]="p.getRecruteur()"></app-personne-list-item>
+  </ul>
+</div>
