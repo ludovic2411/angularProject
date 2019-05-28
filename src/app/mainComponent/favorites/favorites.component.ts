@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {DataService} from "../../Services/data.service";
-import {LoginService} from "../../Services/login.service";
-import {Login} from "../../models/Login";
+import {DataService} from "../../../Services/data.service";
+import {LoginService} from "../../../Services/login.service";
+import {Login} from "../../../models/Login";
 import {faMinus} from "@fortawesome/free-solid-svg-icons";
 
 @Component({

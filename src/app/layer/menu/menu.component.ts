@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import {MenuItem} from "../../models/MenuItem";
+import {MenuItem} from "../../../models/MenuItem";
 import {faUser} from "@fortawesome/free-solid-svg-icons";
 import {faUsers} from "@fortawesome/free-solid-svg-icons";
 import {faBusinessTime} from "@fortawesome/free-solid-svg-icons";
 import {faSign} from "@fortawesome/free-solid-svg-icons/faSign";
-import {AuthService} from "../../Services/auth.service";
+import {AuthService} from "../../../Services/auth.service";
 
 @Component({
   selector: 'app-menu',

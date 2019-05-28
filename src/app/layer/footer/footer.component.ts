@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {faCode} from "@fortawesome/free-solid-svg-icons";
-import {MenuItem} from "../../models/MenuItem";
+import {MenuItem} from "../../../models/MenuItem";
 import {faDesktop} from "@fortawesome/free-solid-svg-icons";
 
 @Component({

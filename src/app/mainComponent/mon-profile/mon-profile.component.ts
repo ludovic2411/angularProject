@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {DataService} from "../../Services/data.service";
-import {Personnes} from "../../models/Personnes";
-import {LoginService} from "../../Services/login.service";
-import {Login} from "../../models/Login";
+import {DataService} from "../../../Services/data.service";
+import {Personnes} from "../../../models/Personnes";
+import {LoginService} from "../../../Services/login.service";
+import {Login} from "../../../models/Login";
 import {faUser,faMailBulk,faPhone,faArrowAltCircleRight} from "@fortawesome/free-solid-svg-icons";
 import {Router} from "@angular/router";
 

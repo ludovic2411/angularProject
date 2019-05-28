@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {applyRedirects} from "@angular/router/src/apply_redirects";
-import {LoginService} from "../../Services/login.service";
-import {Login} from "../../models/Login";
+import {LoginService} from "../../../Services/login.service";
+import {Login} from "../../../models/Login";
 
 @Component({
   selector: 'app-sign-in',

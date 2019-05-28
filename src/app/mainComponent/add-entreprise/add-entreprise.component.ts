@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {faPaperPlane} from "@fortawesome/free-solid-svg-icons/faPaperPlane";
-import {Pays} from "../../models/Pays";
-import {EntrepriseToInsert} from "../../models/EntrepriseToInsert";
-import {DataService} from "../../Services/data.service";
+import {Pays} from "../../../models/Pays";
+import {EntrepriseToInsert} from "../../../models/EntrepriseToInsert";
+import {DataService} from "../../../Services/data.service";
 import {faCheckCircle} from "@fortawesome/free-solid-svg-icons";
-import {ZipCode} from "../../models/ZipCode";
+import {ZipCode} from "../../../models/ZipCode";
 
 @Component({
   selector: 'app-add-entreprise',

@@ -1,9 +1,9 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Entreprise} from "../../models/Entreprise";
+import {Entreprise} from "../../../models/Entreprise";
 import {faPlus} from "@fortawesome/free-solid-svg-icons";
-import {LoginService} from "../../Services/login.service";
-import {Login} from "../../models/Login";
-import {DataService} from "../../Services/data.service";
+import {LoginService} from "../../../Services/login.service";
+import {Login} from "../../../models/Login";
+import {DataService} from "../../../Services/data.service";
 
 @Component({
   selector: 'app-list',

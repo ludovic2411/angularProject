@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {DataService} from "../../Services/data.service";
-import {Entreprise} from "../../models/Entreprise";
+import {DataService} from "../../../Services/data.service";
+import {Entreprise} from "../../../models/Entreprise";
 import {faArrowAltCircleRight, faPlus} from "@fortawesome/free-solid-svg-icons";
 
 
